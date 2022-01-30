@@ -12,55 +12,55 @@ function computerPlay() {
 let computerScore = 0
 let playerScore = 0
 
+const results = document.querySelector(".results");
+const choice = document.querySelector(".choice");
+
 //Create a function to play one round
 function oneRound(playerSelection, computerSelection) {
     //obtain user input
    // playerSelection = this.id
-    
-    computerSelection = computerPlay().toLowerCase()
+    computerSelection = computerPlay().toLowerCase();
 
-
-
-    console.log("You chose " + playerSelection + ". The computer chose " + computerSelection + ".")
+    choice.textContent = "You chose " + playerSelection + ". The computer chose " + computerSelection + ".";
     //if user input is rock and computer is scissors say you win
     if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore += 1
-        console.log("You win. Rock beats Paper")
+        results.textContent = "You win. Rock beats Scissors";
     }
         
     //if user input is rock and computer is paper say you lose
     else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore +=  1
-        console.log("You Lose. Paper beats Rock.")
+        results.textContent = "You Lose. Paper beats Rock."
     }
     // tie
     else if (playerSelection === "rock" && computerSelection === "rock") {
         computerScore += 0
-        console.log("Tie.")
+        results.textContent = "Tie."
     }
     //repeat for other scenarios
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log("You win. Paper beats Rock.")
+        results.textContent = "You win. Paper beats Rock."
         playerScore += 1
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        console.log("You Lose. Scissors beats Paper")
+        results.textContent = "You Lose. Scissors beats Paper"
         computerScore += 1
     }
     else if (playerSelection === "paper" && computerSelection === "paper") {
-        console.log("Tie.")
+        results.textContent = "Tie."
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
-        console.log("You win. Scissors beats Paper.")
+        results.textContent = "You win. Scissors beats Paper."
         playerScore += 1
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        console.log("You Lose. Rock beats Scissors")
+        results.textContent = "You Lose. Rock beats Scissors"
         computerScore += 1
     }
     else if (playerSelection === "scissors" && computerSelection === "scissors") {
 
-        console.log("Tie.")
+        results.textContent = "Tie."
     }
 }
 
@@ -68,7 +68,6 @@ const btns = document.querySelectorAll('button');
 
 btns.forEach((btn) => {
     btn.addEventListener('click', function () {oneRound(btn.id)});
-    // oneRound(this.id));
 });
 
 
