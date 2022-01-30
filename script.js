@@ -8,7 +8,6 @@ function computerPlay() {
     return randomSelection
 }
 
-computerPlay()
 
 let computerScore = 0
 let playerScore = 0
@@ -16,7 +15,7 @@ let playerScore = 0
 //Create a function to play one round
 function oneRound(playerSelection, computerSelection) {
     //obtain user input
-    playerSelection = prompt("Type Rock, Paper,or Scissors").toLowerCase()
+   // playerSelection = this.id
     
     computerSelection = computerPlay().toLowerCase()
 
@@ -64,6 +63,16 @@ function oneRound(playerSelection, computerSelection) {
         console.log("Tie.")
     }
 }
+
+const btns = document.querySelectorAll('button');
+
+btns.forEach((btn) => {
+    btn.addEventListener('click', function () {oneRound(btn.id)});
+    // oneRound(this.id));
+});
+
+
+
 
 //create a function for a 5 round game with a winner declared at the end
 /*function game() {
