@@ -66,7 +66,7 @@ function oneRound(playerSelection, computerSelection) {
 }
 
 //create a function for a 5 round game with a winner declared at the end
-function game() {
+/*function game() {
 
     oneRound()
     console.log("Score: User " + playerScore + " Computer " + computerScore)
@@ -89,4 +89,4 @@ function game() {
         console.log("Game over. Tie.")
     }
 }
-game()
+game() */
