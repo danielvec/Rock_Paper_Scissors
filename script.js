@@ -26,12 +26,14 @@ function oneRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore += 1
         results.textContent = "You win. Rock beats Scissors";
+        pScore.textContent = "User Score: " + playerScore;
     }
         
     //if user input is rock and computer is paper say you lose
     else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore +=  1
         results.textContent = "You Lose. Paper beats Rock."
+        cScore.textContent = "Computer Score: " + computerScore;
     }
     // tie
     else if (playerSelection === "rock" && computerSelection === "rock") {
@@ -42,10 +44,12 @@ function oneRound(playerSelection, computerSelection) {
     else if (playerSelection === "paper" && computerSelection === "rock") {
         results.textContent = "You win. Paper beats Rock."
         playerScore += 1
+        pScore.textContent = "User Score: " + playerScore;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
         results.textContent = "You Lose. Scissors beats Paper"
         computerScore += 1
+        cScore.textContent = "Computer Score: " + computerScore;
     }
     else if (playerSelection === "paper" && computerSelection === "paper") {
         results.textContent = "Tie."
@@ -53,10 +57,12 @@ function oneRound(playerSelection, computerSelection) {
     else if (playerSelection === "scissors" && computerSelection === "paper") {
         results.textContent = "You win. Scissors beats Paper."
         playerScore += 1
+        pScore.textContent = "User Score: " + playerScore;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
         results.textContent = "You Lose. Rock beats Scissors"
         computerScore += 1
+        cScore.textContent = "Computer Score: " + computerScore;
     }
     else if (playerSelection === "scissors" && computerSelection === "scissors") {
 
@@ -70,6 +76,9 @@ btns.forEach((btn) => {
     btn.addEventListener('click', function () {oneRound(btn.id)});
 });
 
+const cScore = document.querySelector("#computerScore");
+const pScore = document.querySelector("#playerScore");
+const final = document.querySelector("#finalResult")
 
 
 
