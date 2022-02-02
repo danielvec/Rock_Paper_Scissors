@@ -3,23 +3,25 @@
     color: white;                                        
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 body {
     background-color: black;
 }
 
 .btns {
     display: flex;
-    justify-content: space-evenly;
-    margin-left: 350px;
-    margin-right: 350px;
+    justify-content: center;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 320px;
-    margin-right: 320px;
+    justify-content: center;
     font-size: 36px;
     padding: 24px;
     text-align: center;
