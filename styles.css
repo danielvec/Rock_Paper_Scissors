@@ -1,0 +1,56 @@
+* {
+    font-family: 'OCR A Std', sans-serif;
+    color: white;                                        
+}
+
+body {
+    background-color: black;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 320px;
+    margin-right: 320px;
+    font-size: 36px;
+    padding: 24px;
+    text-align: center;
+}
+
+.rps {
+    padding: 70px;
+    align-items: center;
+}
+
+#rock {
+    background: url("images/potato-vegetable.png") no-repeat;
+    background-size: 130px;
+    background-position: center;
+    background-color:lightgoldenrodyellow;
+}
+
+#paper {
+    background: url("images/blank-file.png") no-repeat;
+    background-size: 100px;
+    background-position: center;
+    background-color:lightgoldenrodyellow;
+}
+
+#scissors {
+    background: url("images/scissors.png") no-repeat;
+    background-size: 130px;
+    background-position: center;
+    background-color:lightgoldenrodyellow;
+}
+
+button {
+    color: black;
+}

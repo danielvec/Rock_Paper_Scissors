@@ -1,13 +1,10 @@
 
-
-
 // Create a function to randomly return rock, paper, or scissors
 function computerPlay() {
     const options = ["Rock", "Paper", "Scissors"]
     let randomSelection = options[Math.floor(Math.random()*options.length)]
     return randomSelection
 }
-
 
 let computerScore = 0
 let playerScore = 0
@@ -30,14 +27,12 @@ const playAgain =document.createElement('button')
 playAgain.textContent = "Play again!"
 playAgain.addEventListener('click', function () {location.reload()});
 
-//Create a function to play one round
+//Create a function to play one round of rock paper scissors
 function oneRound(playerSelection) {
-    //obtain user input
-   // playerSelection = this.id
+
     computerSelection = computerPlay().toLowerCase();
 
     choice.textContent = "You chose " + playerSelection + ". The computer chose " + computerSelection + ".";
-    //if user input is rock and computer is scissors say you win
 
     if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore += 1
@@ -48,8 +43,6 @@ function oneRound(playerSelection) {
             gameOver();
         }
     }
-        
-    //if user input is rock and computer is paper say you lose
     else if (playerSelection === "rock" && computerSelection === "paper") {
         computerScore +=  1
         results.textContent = "You Lose. Paper beats Rock."
@@ -59,12 +52,11 @@ function oneRound(playerSelection) {
             gameOver();
         }
     }
-    // tie
     else if (playerSelection === "rock" && computerSelection === "rock") {
         computerScore += 0
         results.textContent = "Tie."
     }
-    //repeat for other scenarios
+
     else if (playerSelection === "paper" && computerSelection === "rock") {
         results.textContent = "You win. Paper beats Rock."
         playerScore += 1
@@ -83,8 +75,10 @@ function oneRound(playerSelection) {
             gameOver();
         }
     }
+
     else if (playerSelection === "paper" && computerSelection === "paper") {
         results.textContent = "Tie."
+
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
         results.textContent = "You win. Scissors beats Paper."
@@ -109,8 +103,7 @@ function oneRound(playerSelection) {
         results.textContent = "Tie."
     }
 }
-
-
+//Create a function to end the game by disabling the game buttons
 function gameOver() {
     endGame.appendChild(playAgain);
     rock.disabled = true;
@@ -119,28 +112,3 @@ function gameOver() {
 }
 
 
-//create a function for a 5 round game with a winner declared at the end
-/*function game() {
-
-    oneRound()
-    console.log("Score: User " + playerScore + " Computer " + computerScore)
-    oneRound()
-    console.log("Score: User " + playerScore + " Computer " + computerScore)
-    oneRound()
-    console.log("Score: User " + playerScore + " Computer " + computerScore)
-    oneRound()
-    console.log("Score: User " + playerScore + " Computer " + computerScore)
-    oneRound()
-    console.log("Score: User " + playerScore + " Computer " + computerScore)
-
-    if (computerScore > playerScore) {
-        console.log("Game over. You lose.")
-    }
-    else if (computerScore < playerScore) {
-        console.log("Game over. You win.")
-    }
-    else {
-        console.log("Game over. Tie.")
-    }
-}
-game() */
